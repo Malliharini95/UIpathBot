@@ -1,0 +1,276 @@
+Delivered-To: malligamuthuraj85@gmail.com
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+	by mx.google.com with SMTPS
+	id 18-20020a170902c25200b001931004fe80sor848484plg
+	.114.2023.02.09.05.00.57        for
+	<malligamuthuraj85@gmail.com>        (Google Transport Security); Thu, 09
+	Feb 2023 05:00:58 -0800 (PST)
+X-Received: by 2002:a17:90a:bd92:b0:22b:aa69:ccc3 with SMTP id
+ z18-20020a17090abd9200b0022baa69ccc3mr1514365pjr.35.1675947657740; Thu, 09
+ Feb 2023 05:00:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1675947658; cv=none; d=google.com;
+	s=arc-20160816;
+	b=tgkDBbhzPHXmrxkBULb7R395Q2vLb0g1A3+6JKeqbIOXqpPhKL2ycKyWVBix43ebgxhBx0oOYOe
+	YJg9V8JTaEYdWhmTSHuStXcs3qLcqA8KMmUsPtj8MoN52H4V6ZaPGPlRgixEBd8LOwUdtnwB9XBFv
+	FzVE7GkLVcPfSXJzmQqE0mHHpHyjwn1ScRSydXNQeLaTvTaP1cjJDrmge3kNJbDfpI2dlLu5kR2Fg
+	kxSOAMntFJS6vGCnGBU6ziiaP9DtF4IuuQ7zQCy0fR4b9z3QDCS69SJYnEt6X7xtLmaZWoOjYirjV
+	oIT9TokDGv6B2TsHduwQQImxpdTXFruudfgQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+	s=arc-20160816;
+	h=to:from:subject:message-id:feedback-id:date:mime-version:dkim-signature;
+	bh=r5sPqzWjKYCWniSiq5AHHft0APaNqQNZko94Q1fd2YE=;
+	b=vdCJsnt0oHUD5tIdmGVLWsv29z89NGzYKH+bNKkQJr0jvAQ4uXOmg3kEOjN+VlkGfIWlPD3aMxe
+	tSfJKTbo4w1+CyU2o3o5lL0f6D/PgFsdCdbBnHcv6OUR5rO/wvVc18wvLu+v80qGfvudafEaUUUx/
+	gji9Q5ZdvSABA1zs5bYmWSkxBgLiD1sEg04qmmK2qB4swPvEYon0vRl1se2LdudYLLIk7/yUI3pb7
+	rQ/LT3scbb+tPRguTHiTX/VrMya76gy6np5FBiydKDD2tQfxWd10j9oJfXQ2U6htIpNd4dAVWsypB
+	J6H2HPJrvSJfkJGtwQKM5y7YL1mM6FKH2nUA==
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass
+	header.i=@accounts.google.com header.s=20210112 header.b="X/7Jpr91"; spf=pass
+	(google.com: domain of 3ie7kywgtacajk-nalhu688kqjpo.ckkcha.8ki@gaia.bounces.google.com designates 209.85.220.73 as permitted sender)
+	smtp.mailfrom=3ie7kYwgTACAJK-NALHU688KQJPO.CKKCHA.8KI@gaia.bounces.google.com;
+	dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+Return-Path: <3ie7kYwgTACAJK-NALHU688KQJPO.CKKCHA.8KI@gaia.bounces.google.com>
+Received-SPF: pass (google.com: domain of
+ 3ie7kywgtacajk-nalhu688kqjpo.ckkcha.8ki@gaia.bounces.google.com designates
+ 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com; dkim=pass header.i=@accounts.google.com
+	header.s=20210112 header.b="X/7Jpr91"; spf=pass
+	(google.com: domain of 3ie7kywgtacajk-nalhu688kqjpo.ckkcha.8ki@gaia.bounces.google.com designates 209.85.220.73 as permitted sender)
+	smtp.mailfrom=3ie7kYwgTACAJK-NALHU688KQJPO.CKKCHA.8KI@gaia.bounces.google.com;
+	dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=accounts.google.com;
+	s=20210112;
+	h=to:from:subject:message-id:feedback-id:date:mime-version:from:to:cc:
+	subject:date:message-id:reply-to;
+	bh=r5sPqzWjKYCWniSiq5AHHft0APaNqQNZko94Q1fd2YE=;
+	b=X/7Jpr91aR+6fvrm7MaMnybWm4ggj6wavQWiTaTCUR0dTTyeIuNPSi+vAV47KhDM9VXWinjReSs
+	phI5mKZs+X/lV6QJdcDorTPMx2z2T5wC7qMXsZa+sMv+HqfW7T3gmHmfvCR5ytYbZbjKxfCmE2lwb
+	8OssoRKzoefl4c24KVUFf19jwtdC2PRS27z1E/bpHpYGodcQHxMLWTMtsDt7BpzpllFxOrK4cJMNl
+	13xfouTKRhy9TT2D501r7JFN+heE8At36TxCZ7nM2yg/1JTG5JNB+WxSHTIO5sG3kr25ujmJlZB1N
+	0TCthv9AaC2I9jLn3OxnZciy0p2jyk4yyorQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;       
+ d=1e100.net; s=20210112;       
+ h=to:from:subject:message-id:feedback-id:date:mime-version        
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;       
+ bh=r5sPqzWjKYCWniSiq5AHHft0APaNqQNZko94Q1fd2YE=;       
+ b=EMdtdYW7MAnkpu3fTykj0PRbfYBeeIXdlL/2MRO3rP6CR7awTHn/6ObDCvIzW7yz2y        
+ 6HKHRveFq7I3V875VmVO6cVabzLNyzY898be8EJECmctojs913QWeKgmx9b94jU09Ba9        
+ rysBcPBpufmyJW9zG/30us/B8Avd6lBNqtDPq8v25WHqNejagd/34SOARBpl51cUfHXH        
+ LtThcryh8a5+4MQPRZ8MNTlcZd286pEf5/szT4zXijo0pkBiQQeLtgbp2bMsRind/TNT        
+ mLT2RmFw0eqoMi8gOMKvesTJimb/hms6ekfhBeD9Y0SHpFgQkRSAOiiIIDShi268kX8D        
+ wPGg==
+X-Gm-Message-State: AO0yUKX6nFTsUkp9lZjQd4si1v3eaLZc/NfmAIxjrfIbl2QMHERqyuXW
+	ZjdzyMZ6OJTzxMYM+fjILptVowWdT7LFJZhw6b8lqSs7
+X-Google-Smtp-Source: =?utf-8?q?AK7set861QG6tsVnKvoehga5gQtorLHvYKbTD6Ql1buR=2F+Ze82xxpG96GV6HX?=
+ =?utf-8?q?d51ki+ucT=2FyOwv738ag5y0wppjp=2FR2d5g=3D=3D?=
+MIME-Version: 1.0
+Date: Thu, 09 Feb 2023 13:00:57 +0000
+X-Account-Notification-Type: 20
+Feedback-ID: 20:account-notifier
+X-Notifications: 892d67ffbd580000
+X-Notifications-Bounce-Info: =?utf-8?q?AWY41VZPvX0plEmy5yR1IJ8Qreo9=5FZKtbOrjLMbjnlMRxT6wKRNHeQuncDEMB?=
+ =?utf-8?q?54Eyh3-Ees0vbROTlywgpHdt9t6Acw8x9gyLfFbVMoIRsFyT1KzdZTHWy1wHW?=
+ =?utf-8?q?Q2vQre-ri3BCAXYpWck8ztauoVbLPs46TeWnUc3l0gpezcoQXGnN9X7h4eTJR?=
+ =?utf-8?q?uinyNmKOamdbeoIrlmqlVlWoNjAwNjA0MDQxNTM1NTk2OTMzMg?=
+Message-ID: <z0wVsyNr6JnYVVKXwh3X8g@notifications.google.com>
+Subject: Security alert
+From: Google <no-reply@accounts.google.com>
+To: malligamuthuraj85@gmail.com
+Uid: 301
+Folder: INBOX
+Sender: Google <no-reply@accounts.google.com>
+PlainText: [image: Google]App password created to sign in to your
+ accountmalligamuthuraj85@gmail.comIf you didn't generate this password for
+ Mail on my Windows Computer,someone else might be using your account. Check
+ and secure your account now.Check
+ =?utf-8?q?activity=3Chttps=3A=2F=2Faccounts=2Egoogle=2Ecom=2FAccountChooser=3FEmail=3Dmal?=
+ =?utf-8?q?ligamuthuraj85=40gmail=2Ecom&continue=3Dhttps=3A=2F=2Fmyaccount=2Egoogle=2Eco?=
+ =?utf-8?q?m=2Falert=2Fnt=2F1675947657254=3Frfn%3D20%26rfnc%3D1%26eid%3D-2143550?=
+ =?utf-8?q?658788047114%26et%3D0=3EYou?= can also see security activity
+ athttps://myaccount.google.com/notificationsYou received this email to let
+ you know about important changes to yourGoogle Account and
+ =?utf-8?b?c2VydmljZXMuwqk=?= 2023 Google LLC, 1600 Amphitheatre Parkway,
+ Mountain View, CA 94043, USA
+HtmlBody: <!DOCTYPE html><html lang="en"><head><meta name="format-detection"
+ content="email=no"/><meta name="format-detection" content="date=no"/><style
+ nonce="YYm_-WV9hCWuuT216qNJLg">.awl a {color: #FFFFFF; text-decoration:
+ none;} .abml a {color: #000000; font-family:
+ Roboto-Medium,Helvetica,Arial,sans-serif; font-weight: bold; text-decoration:
+ none;} .adgl a {color: rgba(0, 0, 0, 0.87); text-decoration: none;} .afal a
+ {color: #b0b0b0; text-decoration: none;} @media screen and (min-width: 600px)
+ {.v2sp {padding: 6px 30px 0px;} .v2rsp {padding: 0px 10px;}} @media screen
+ and (min-width: 600px) {.mdv2rw {padding: 40px 40px;}} </style><link
+ href="//fonts.googleapis.com/css?family=Google+Sans" rel="stylesheet"
+ type="text/css" nonce="YYm_-WV9hCWuuT216qNJLg"/></head><body style="margin:
+ 0; padding: 0;" bgcolor="#FFFFFF"><table width="100%" height="100%"
+ style="min-width: 348px;" border="0" cellspacing="0" cellpadding="0"
+ lang="en"><tr height="32" style="height: 32px;"><td></td></tr><tr
+ align="center"><td><div itemscope itemtype="//schema.org/EmailMessage"><div
+ itemprop="action" itemscope itemtype="//schema.org/ViewAction"><link
+ itemprop="url"
+ =?utf-8?q?href=3D=22https=3A=2F=2Faccounts=2Egoogle=2Ecom=2FAccountChooser=3FEmail=3Dmallig?=
+ =?utf-8?q?amuthuraj85=40gmail=2Ecom&amp=3Bcontinue=3Dhttps=3A=2F=2Fmyaccount=2Egoogle=2Ec?=
+ =?utf-8?q?om=2Falert=2Fnt=2F1675947657254=3Frfn%3D20%26rfnc%3D1%26eid%3D-214355?=
+ =?utf-8?q?0658788047114%26et%3D0=22=2F=3E=3Cmeta?= itemprop="name"
+ content="Review Activity"/></div></div><table border="0" cellspacing="0"
+ cellpadding="0" style="padding-bottom: 20px; max-width: 516px; min-width:
+ 220px;"><tr><td width="8" style="width: 8px;"></td><td><div
+ style="border-style: solid; border-width: thin; border-color:#dadce0;
+ border-radius: 8px; padding: 40px 20px;" align="center" class="mdv2rw"><img
+ =?utf-8?q?src=3D=22https=3A=2F=2Fwww=2Egstatic=2Ecom=2Fimages=2Fbranding=2Fgooglelogo=2F2x=2Fgo?=
+ =?utf-8?q?oglelogo=5Fcolor=5F74x24dp=2Epng=22?= width="74" height="24"
+ aria-hidden="true" style="margin-bottom: 16px;" alt="Google"><div
+ style="font-family: &#39;Google
+ Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;border-bottom: thin
+ solid #dadce0; color: rgba(0,0,0,0.87); line-height: 32px; padding-bottom:
+ 24px;text-align: center; word-break: break-word;"><div style="font-size:
+ 24px;">App password created to sign in to your account </div><table
+ align="center" style="margin-top:8px;"><tr style="line-height: normal;"><td
+ align="right" style="padding-right:8px;"><img width="20" height="20"
+ style="width: 20px; height: 20px; vertical-align: sub; border-radius: 50%;;"
+ =?utf-8?q?src=3D=22https=3A=2F=2Flh3=2Egoogleusercontent=2Ecom=2Fa=2FAEdFTp5PsG1G5-dRDbnG?=
+ =?utf-8?q?10xM9TVhyn4R4exPxvPuUXXu=3Ds96=22?= alt=""></td><td><a
+ style="font-family: &#39;Google
+ Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color:
+ rgba(0,0,0,0.87); font-size: 14px; line-height:
+ 20px;">malligamuthuraj85@gmail.com</a></td></tr></table> </div><div
+ style="font-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size:
+ 14px; color: rgba(0,0,0,0.87); line-height: 20px;padding-top: 20px;
+ text-align: left;">If you didn't generate this password for Mail on my
+ Windows Computer, someone else might be using your account. Check and secure
+ your account now.<div style="padding-top: 32px; text-align: center;"><a
+ =?utf-8?q?href=3D=22https=3A=2F=2Faccounts=2Egoogle=2Ecom=2FAccountChooser=3FEmail=3Dmallig?=
+ =?utf-8?q?amuthuraj85=40gmail=2Ecom&amp=3Bcontinue=3Dhttps=3A=2F=2Fmyaccount=2Egoogle=2Ec?=
+ =?utf-8?q?om=2Falert=2Fnt=2F1675947657254=3Frfn%3D20%26rfnc%3D1%26eid%3D-214355?=
+ =?utf-8?q?0658788047114%26et%3D0=22?= target="_blank"
+ link-id="main-button-link" style="font-family: &#39;Google
+ Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; line-height: 16px;
+ color: #ffffff; font-weight: 400; text-decoration: none;font-size:
+ 14px;display:inline-block;padding: 10px 24px;background-color: #4184F3;
+ border-radius: 5px; min-width: 90px;">Check activity</a></div></div><div
+ style="padding-top: 20px; font-size: 12px; line-height: 16px; color: #5f6368;
+ letter-spacing: 0.3px; text-align: center">You can also see security activity
+ at<br><a style="color: rgba(0, 0, 0, 0.87);text-decoration:
+ inherit;">https://myaccount.google.com/notifications</a></div></div><div
+ style="text-align: left;"><div style="font-family:
+ Roboto-Regular,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.54); font-size:
+ 11px; line-height: 18px; padding-top: 12px; text-align: center;"><div>You
+ received this email to let you know about important changes to your Google
+ Account and services.</div><div style="direction: ltr;">&copy; 2023 Google
+ LLC, <a class="afal" style="font-family:
+ Roboto-Regular,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.54); font-size:
+ 11px; line-height: 18px; padding-top: 12px; text-align: center;">1600
+ Amphitheatre Parkway, Mountain View, CA 94043,
+ USA</a></div></div></div></td><td width="8" style="width:
+ 8px;"></td></tr></table></td></tr><tr height="32" style="height:
+ 32px;"><td></td></tr></table></body></html>
+Content-Type: multipart/alternative; boundary="=-QyblWjnHm0hDjmRlREHthQ=="
+
+--=-QyblWjnHm0hDjmRlREHthQ==
+Content-Type: text/plain; charset=utf-8
+
+[image: Google]
+App password created to sign in to your account
+
+
+malligamuthuraj85@gmail.com
+If you didn't generate this password for Mail on my Windows Computer,
+someone else might be using your account. Check and secure your account now.
+Check activity
+<https://accounts.google.com/AccountChooser?Email=malligamuthuraj85@gmail.com&continue=https://myaccount.google.com/alert/nt/1675947657254?rfn%3D20%26rfnc%3D1%26eid%3D-2143550658788047114%26et%3D0>
+You can also see security activity at
+https://myaccount.google.com/notifications
+You received this email to let you know about important changes to your
+Google Account and services.
+© 2023 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+
+--=-QyblWjnHm0hDjmRlREHthQ==
+Content-Type: text/plain; format=flowed; delsp=yes; charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-Id: <4f345b72-afeb-47b6-ae6b-661b07dfb19d>
+
+W2ltYWdlOiBHb29nbGVdDQpBcHAgcGFzc3dvcmQgY3JlYXRlZCB0byBzaWduIGluIHRvIHlvdXIg
+YWNjb3VudA0KDQoNCm1hbGxpZ2FtdXRodXJhajg1QGdtYWlsLmNvbQ0KSWYgeW91IGRpZG4ndCBn
+ZW5lcmF0ZSB0aGlzIHBhc3N3b3JkIGZvciBNYWlsIG9uIG15IFdpbmRvd3MgQ29tcHV0ZXIsDQpz
+b21lb25lIGVsc2UgbWlnaHQgYmUgdXNpbmcgeW91ciBhY2NvdW50LiBDaGVjayBhbmQgc2VjdXJl
+IHlvdXIgYWNjb3VudCBub3cuDQpDaGVjayBhY3Rpdml0eQ0KPGh0dHBzOi8vYWNjb3VudHMuZ29v
+Z2xlLmNvbS9BY2NvdW50Q2hvb3Nlcj9FbWFpbD1tYWxsaWdhbXV0aHVyYWo4NUBnbWFpbC5jb20m
+Y29udGludWU9aHR0cHM6Ly9teWFjY291bnQuZ29vZ2xlLmNvbS9hbGVydC9udC8xNjc1OTQ3NjU3
+MjU0P3JmbiUzRDIwJTI2cmZuYyUzRDElMjZlaWQlM0QtMjE0MzU1MDY1ODc4ODA0NzExNCUyNmV0
+JTNEMD4NCllvdSBjYW4gYWxzbyBzZWUgc2VjdXJpdHkgYWN0aXZpdHkgYXQNCmh0dHBzOi8vbXlh
+Y2NvdW50Lmdvb2dsZS5jb20vbm90aWZpY2F0aW9ucw0KWW91IHJlY2VpdmVkIHRoaXMgZW1haWwg
+dG8gbGV0IHlvdSBrbm93IGFib3V0IGltcG9ydGFudCBjaGFuZ2VzIHRvIHlvdXINCkdvb2dsZSBB
+Y2NvdW50IGFuZCBzZXJ2aWNlcy4NCsKpIDIwMjMgR29vZ2xlIExMQywgMTYwMCBBbXBoaXRoZWF0
+cmUgUGFya3dheSwgTW91bnRhaW4gVmlldywgQ0EgOTQwNDMsIFVTQQ0K
+
+--=-QyblWjnHm0hDjmRlREHthQ==
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Id: <ad2f8ff0-84b6-4037-856a-1912759dc2de>
+
+<!DOCTYPE html><html lang=3D"en"><head><meta name=3D"format-detection" conte=
+nt=3D"email=3Dno"/><meta name=3D"format-detection" content=3D"date=3Dno"/><s=
+tyle nonce=3D"YYm_-WV9hCWuuT216qNJLg">.awl a {color: #FFFFFF; text-decoratio=
+n: none;} .abml a {color: #000000; font-family: Roboto-Medium,Helvetica,Aria=
+l,sans-serif; font-weight: bold; text-decoration: none;} .adgl a {color: rgb=
+a(0, 0, 0, 0.87); text-decoration: none;} .afal a {color: #b0b0b0; text-deco=
+ration: none;} @media screen and (min-width: 600px) {.v2sp {padding: 6px 30p=
+x 0px;} .v2rsp {padding: 0px 10px;}} @media screen and (min-width: 600px) {.=
+mdv2rw {padding: 40px 40px;}} </style><link href=3D"//fonts.googleapis.com/c=
+ss?family=3DGoogle+Sans" rel=3D"stylesheet" type=3D"text/css" nonce=3D"YYm_-=
+WV9hCWuuT216qNJLg"/></head><body style=3D"margin: 0; padding: 0;" bgcolor=3D=
+"#FFFFFF"><table width=3D"100%" height=3D"100%" style=3D"min-width: 348px;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" lang=3D"en"><tr height=3D"3=
+2" style=3D"height: 32px;"><td></td></tr><tr align=3D"center"><td><div items=
+cope itemtype=3D"//schema.org/EmailMessage"><div itemprop=3D"action" itemsco=
+pe itemtype=3D"//schema.org/ViewAction"><link itemprop=3D"url" href=3D"https=
+://accounts.google.com/AccountChooser?Email=3Dmalligamuthuraj85@gmail.com&am=
+p;continue=3Dhttps://myaccount.google.com/alert/nt/1675947657254?rfn%3D20%26=
+rfnc%3D1%26eid%3D-2143550658788047114%26et%3D0"/><meta itemprop=3D"name" con=
+tent=3D"Review Activity"/></div></div><table border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" style=3D"padding-bottom: 20px; max-width: 516px; min-width=
+: 220px;"><tr><td width=3D"8" style=3D"width: 8px;"></td><td><div style=3D"b=
+order-style: solid; border-width: thin; border-color:#dadce0; border-radius:=
+ 8px; padding: 40px 20px;" align=3D"center" class=3D"mdv2rw"><img src=3D"htt=
+ps://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.=
+png" width=3D"74" height=3D"24" aria-hidden=3D"true" style=3D"margin-bottom:=
+ 16px;" alt=3D"Google"><div style=3D"font-family: &#39;Google Sans&#39;,Robo=
+to,RobotoDraft,Helvetica,Arial,sans-serif;border-bottom: thin solid #dadce0;=
+ color: rgba(0,0,0,0.87); line-height: 32px; padding-bottom: 24px;text-align=
+: center; word-break: break-word;"><div style=3D"font-size: 24px;">App passw=
+ord created to sign in to your account </div><table align=3D"center" style=3D=
+"margin-top:8px;"><tr style=3D"line-height: normal;"><td align=3D"right" sty=
+le=3D"padding-right:8px;"><img width=3D"20" height=3D"20" style=3D"width: 20=
+px; height: 20px; vertical-align: sub; border-radius: 50%;;" src=3D"https://=
+lh3.googleusercontent.com/a/AEdFTp5PsG1G5-dRDbnG10xM9TVhyn4R4exPxvPuUXXu=3Ds=
+96" alt=3D""></td><td><a style=3D"font-family: &#39;Google Sans&#39;,Roboto,=
+RobotoDraft,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.87); font-size: 1=
+4px; line-height: 20px;">malligamuthuraj85@gmail.com</a></td></tr></table> <=
+/div><div style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif; f=
+ont-size: 14px; color: rgba(0,0,0,0.87); line-height: 20px;padding-top: 20px=
+; text-align: left;">If you didn't generate this password for Mail on my Win=
+dows Computer, someone else might be using your account. Check and secure yo=
+ur account now.<div style=3D"padding-top: 32px; text-align: center;"><a href=
+=3D"https://accounts.google.com/AccountChooser?Email=3Dmalligamuthuraj85@gma=
+il.com&amp;continue=3Dhttps://myaccount.google.com/alert/nt/1675947657254?rf=
+n%3D20%26rfnc%3D1%26eid%3D-2143550658788047114%26et%3D0" target=3D"_blank" l=
+ink-id=3D"main-button-link" style=3D"font-family: &#39;Google Sans&#39;,Robo=
+to,RobotoDraft,Helvetica,Arial,sans-serif; line-height: 16px; color: #ffffff=
+; font-weight: 400; text-decoration: none;font-size: 14px;display:inline-blo=
+ck;padding: 10px 24px;background-color: #4184F3; border-radius: 5px; min-wid=
+th: 90px;">Check activity</a></div></div><div style=3D"padding-top: 20px; fo=
+nt-size: 12px; line-height: 16px; color: #5f6368; letter-spacing: 0.3px; tex=
+t-align: center">You can also see security activity at<br><a style=3D"color:=
+ rgba(0, 0, 0, 0.87);text-decoration: inherit;">https://myaccount.google.com=
+/notifications</a></div></div><div style=3D"text-align: left;"><div style=3D=
+"font-family: Roboto-Regular,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.=
+54); font-size: 11px; line-height: 18px; padding-top: 12px; text-align: cent=
+er;"><div>You received this email to let you know about important changes to=
+ your Google Account and services.</div><div style=3D"direction: ltr;">&copy=
+; 2023 Google LLC, <a class=3D"afal" style=3D"font-family: Roboto-Regular,He=
+lvetica,Arial,sans-serif;color: rgba(0,0,0,0.54); font-size: 11px; line-heig=
+ht: 18px; padding-top: 12px; text-align: center;">1600 Amphitheatre Parkway,=
+ Mountain View, CA 94043, USA</a></div></div></div></td><td width=3D"8" styl=
+e=3D"width: 8px;"></td></tr></table></td></tr><tr height=3D"32" style=3D"hei=
+ght: 32px;"><td></td></tr></table></body></html>
+--=-QyblWjnHm0hDjmRlREHthQ==--

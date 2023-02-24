@@ -1,0 +1,62 @@
+Delivered-To: malligamuthuraj85@gmail.com
+Received: from ngetrsml01.cris.org.in (mailrelay1.cris.org.in [10.79.1.83])
+	by ngetrsml01.cris.org.in (Postfix) with ESMTP id 30AD341EB4A
+	for <malligamuthuraj85@gmail.com>; Mon,  4 Apr 2022 18:43:44 +0530 (IST)
+X-Google-Smtp-Source: ABdhPJzgfvnkRQ1avWwUI7L9oSN9ODJ/ML9d+hdXzvI3dxgG1xKtCGlZi7/liv7G/lXvG4rKP/fH
+X-Received: by 2002:a17:902:7205:b0:156:1a0a:2c39 with SMTP id
+ ba5-20020a170902720500b001561a0a2c39mr23284580plb.88.1649078025237;       
+ Mon, 04 Apr 2022 06:13:45 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1649078025; cv=none; d=google.com;
+	s=arc-20160816;
+	b=TDRM6UsvdEmrAH0pmeRDlCBPn2wJ2YNtvSV4OqeydUj9jf+QaFtsYCeSGK72iEmPsAcm//yZAp/
+	3Z+5paLQ7sLi3VWHzOOOetKHx1+KuCrJ/v4LlU50qgaDcJ5XTFOv66jQQeeXd5tbZIWXTvjR+gB+U
+	2yu13ggSEzbNGsP7O5vluizMIB9tjZmzyptiwxiTdkPkVI1Uy4vC/uyy2/dMf6Jkgimcc2dzFLCXR
+	liD8E1DmNKgyEOQAEI9P/ysAjGQ3iDw+S6uaCKFfKEc5fuhLAj2aJAd14LR6JIPoLt5QDXoOCEeph
+	Ej1U4j3j4Lo0cTsSXTgrAwfZZvCKi+bdXd5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+	s=arc-20160816;
+	h=date:content-transfer-encoding:mime-version:subject:message-id:to:from;
+	bh=ticTnxFwutWUxacOHIOW+xRfSzBBl19RB/PlWJjJOTc=;
+	b=EfxXu+oULKZLLwecCKzc6yVH/5SfgYcTuXjizUm8L7D+dzLqxsbO+n/imlaqVSyAgOo0U5Spwqz
+	rRlxjdhLi7q0clCnHZ+wzawT4DwOObOl3/VpBY5Z14mocX+YamJeITEPAtS3oLI9Ap72IZ9dzxNKV
+	qU+QB3jh9juL745PcHi6wLcmcy4yzEwfc5qsT4nHGO+NQPcJ0WaWsImC345sLqXe+eheqyM/JejmS
+	c4g4AXNZTKjjgItTpaSHDe1/lgNoL/liZKTJxsHQKhBvKYrrU0HGbOeMoZgqs+sJfNMZLMf60dM4b
+	opSuWABGzaz7XovATGamc/5Ao+qPMT1f7qUA==
+ARC-Authentication-Results: i=1; mx.google.com; spf=pass
+	(google.com: domain of ticketadmin@irctc.co.in designates 103.252.142.31 as permitted sender)
+	smtp.mailfrom=ticketadmin@irctc.co.in;
+	dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=irctc.co.in
+Return-Path: <ticketadmin@irctc.co.in>
+Received-SPF: pass (google.com: domain of ticketadmin@irctc.co.in designates
+ 103.252.142.31 as permitted sender) client-ip=103.252.142.31;
+Authentication-Results: mx.google.com; spf=pass
+	(google.com: domain of ticketadmin@irctc.co.in designates 103.252.142.31 as permitted sender)
+	smtp.mailfrom=ticketadmin@irctc.co.in;
+	dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=irctc.co.in
+From: ticketadmin@irctc.co.in
+To: malligamuthuraj85@gmail.com
+Message-ID: <1142060864.1120500.1649078024181.JavaMail.wluser@ngetrsml01.cris.org.in>
+Subject: Intimation of Account recovery request on IRCTC
+MIME-Version: 1.0
+Date: Mon, 04 Apr 2022 18:43:44 +0530
+Uid: 187
+Folder: INBOX
+Sender: ticketadmin@irctc.co.in
+HtmlBody: Dear <B>Malliga Muthuraj</B>,<BR/><BR/>A request has been received
+ to recover your account registered with IRCTC. If not done by you, please
+ inform at care@irctc.co.in from registered email id.
+Content-Type: multipart/alternative; boundary="=-CHvNUHrha0REHdSO29MNsQ=="
+
+--=-CHvNUHrha0REHdSO29MNsQ==
+Content-Type: text/html; charset=us-ascii
+
+Dear <B>Malliga Muthuraj</B>,<BR/><BR/>A request has been received to recover your account registered with IRCTC. If not done by you, please inform at care@irctc.co.in from registered email id.
+
+--=-CHvNUHrha0REHdSO29MNsQ==
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-Id: <ff20b12e-5264-469c-a671-795d662e27b4>
+
+Dear <B>Malliga Muthuraj</B>,<BR/><BR/>A request has been received to recover your account registered with IRCTC. If not done by you, please inform at care@irctc.co.in from registered email id.
+
+--=-CHvNUHrha0REHdSO29MNsQ==--

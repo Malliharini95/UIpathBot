@@ -1,0 +1,779 @@
+Delivered-To: malligamuthuraj85@gmail.com
+Received: from mdn-txn-msbadger0205.apple.com (mdn-txn-msbadger0205.apple.com. [17.171.37.32])
+	by mx.google.com with ESMTPS
+	id bi42-20020a05620a31aa00b0069f8a90b1dfsi4809661qkb
+	.559.2022.04.30.20.35.17        for
+	<malligamuthuraj85@gmail.com>        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+	Sat, 30 Apr 2022 20:35:17 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJy4nK/zGi/0VCC+Rz7maGEFUkl5MC3cMlCLJY9RQVh59FTbWDU4FVOYeNpC0dvZW/Ju39J3
+X-Received: by 2002:ac8:5851:0:b0:2e1:eba3:3beb with SMTP id
+ h17-20020ac85851000000b002e1eba33bebmr5580984qth.20.1651376117999;       
+ Sat, 30 Apr 2022 20:35:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1651376117; cv=none; d=google.com;
+	s=arc-20160816;
+	b=p+qMqIHX7fnjRrKDnmknTrZWxy+WQRNPQl6zCyCb2Wuc4VvPm6+WQoU8AlfyYc2fxmLb+9qJolH
+	19kpZN8rx2tVL+nDca9eK/rrlaOORPKGypcrDzitAsaK9jcqSwhaobj4cknEBabZV9mdWVdifOe/F
+	oPIohizBES+2PrmA9cKaz6OtLPxMMZ55BsB+mI0SFk1VDLuYBWcrSHU+UnFwzJ5nGxMS4adGBVHx6
+	hqtjbjNGpAtD1Q8CcP2k0rOjysPLbk+pNBKJvE7320Uy/Ub5zAdOX0d8MTMPAJOyVSlviWiqiz/tA
+	3lvAHQi2LUWNl0tDURCIVdpQgSY7CZ+NMcUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+	s=arc-20160816;
+	h=mime-version:subject:message-id:to:from:date:dkim-signature;
+	bh=6y9IGzTxF+DYlQa0iDSANry4a6xr6w857ua2CdjUFko=;
+	b=Fq2JxFerQ8I3HI4gnqwwvQ4abU9ECBWPptXBUp6wfLoiMblzBDVj69m+IyJLrfjj8IPkv3/D96o
+	ZS2CQELt8uFdDycKOVZObRzl3eBTOrDldymQ7QhR4/nQ4lZBnWEoY7j5a2hUzKCIYK9kGRoeIdFha
+	WbVbA3O6rvUrBU2twdLGl2owRCJoRCNmqL5LvzGB/0rF3RGZeQaNYIkBWw0FU0cZAg2cOn7wMn3BH
+	tdKodTX2v4zeQSiJ7OjY9fpTDniV7qY12etqYKU4aRFAlNxTiEeJv6C0pyJtYrdVQCXp5ZSS4H2Xp
+	nVRiZDHKh4o+Xfavx/U34cKQXchxnXBdLuEw==
+ARC-Authentication-Results: i=1; mx.google.com;
+	dkim=pass header.i=@itunes.com header.s=itunes0517 header.b=nIkkGYR4;
+	spf=pass
+	(google.com: domain of do_not_reply@itunes.com designates 17.171.37.32 as permitted sender)
+	smtp.mailfrom=do_not_reply@itunes.com;
+	dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=itunes.com
+Return-Path: <do_not_reply@itunes.com>
+Received-SPF: pass (google.com: domain of do_not_reply@itunes.com designates
+ 17.171.37.32 as permitted sender) client-ip=17.171.37.32;
+Authentication-Results: mx.google.com;
+	dkim=pass header.i=@itunes.com header.s=itunes0517 header.b=nIkkGYR4;
+	spf=pass
+	(google.com: domain of do_not_reply@itunes.com designates 17.171.37.32 as permitted sender)
+	smtp.mailfrom=do_not_reply@itunes.com;
+	dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=itunes.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=itunes.com;
+	s=itunes0517; t=1651376117;
+	bh=6y9IGzTxF+DYlQa0iDSANry4a6xr6w857ua2CdjUFko=;
+	h=Date:From:To:Message-ID:Subject:Content-Type;
+	b=nIkkGYR4ITYjO8wrn86bzaM9RTHGsvGaOSnIxZO5YDayuBCB5f+zGGfGihpL3KNjwGZcC0TCyoD
+	JopWgJFFW2QzQp58aQyIRq9txMxcLq50FmUS0LBkfdLQpw4IT99IDWwBn82O0TJ4N6Q9laKPJPK3Z
+	djiOGnIVObBugQNlJSmzlnscoLx0zTW1hqUHPkjzpi3YuedoDslR/0c4LO71uwjyXdU5Tc2navD0T
+	J6J1zHtXQe+DFbTl06YpLbAVk6irIGSVMUO1BBehv63kHl7aLBMgI1Wgio8azjxPdvIUZNZIJreuK
+	/rly0KTpWttZ2WRWX2GnJRLfQ+3Qha+S+4Pg==
+Date: Sun, 01 May 2022 03:35:17 +0000
+From: iTunes Store <do_not_reply@itunes.com>
+To: malligamuthuraj85@gmail.com
+Message-ID: <1078048527.83058476.1651376117826@email.apple.com>
+Subject: A refund request has been received
+MIME-Version: 1.0
+X-Attach-Flag: N
+X-COMMS-C: N
+X-Sent-To: =?utf-8?q?malligamuthuraj85=40gmail=2Ecom=2C2=2CNk%2BxZuERs70tRKBKMKVzNJGAvVE%2?=
+ =?utf-8?q?FHPhGfI%2Fv%2FJQV2TZkyXJUnAIbeIpFUZKopOOYnLpsWUqbQ4%2BK9Iixjw?=
+ =?utf-8?q?UR8upYbrAzNgkkGIFJ9o3R2CA2T5ysngxavSd0ziS2cNZkYd4AWTvO%2BbITx?=
+ =?utf-8?q?ASdXxha3A%2FLotc1FSgjPqiw%2BPVZ7zHGa0iBk0skFpzPMdJY7wfj1uwdQ7?=
+ =?utf-8?q?nxRLVmKbqYPnTOtkQDqWvk%2BlwNqXvAJ6%2BDkMAqQmp4TL6cmoKrqTBzHF5?=
+ =?utf-8?q?O2SSUIMnuqLyQ74sZi7kOzzbSu3ZZ69XtEamUGfz6j%2F%2BBQeJHizk5mkIQ?=
+ =?utf-8?q?K6agrmr4dco4F8Fh0Mp%2Bc%2BqUSVM2T48SCEiA6FhQUclxpdhiK8AALfDHo?=
+ =?utf-8?q?gsxrNrYCaGp8QigByj3nYZ%2B7Q%2Fov%2FCcp%2F0b6S38%2FzPfK6z56%2B?=
+ =?utf-8?q?%2FqOW5z6CcgPPUno6bcEiZexJ53zZR2wN3pGSWZZudnRbGFRs2nyQ%3D%3D?=
+X-TXN_ID: e3178485-02b2-4865-b58d-5d24c8f151f0
+X-DKIM_SIGN_REQUIRED: YES
+X-EmailType-Id: 10631
+X-Business-Group: iTunes
+X-Country: US
+Uid: 194
+Folder: INBOX
+Sender: iTunes Store <do_not_reply@itunes.com>
+HtmlBody: <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+ 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html><head>   
+ <meta name='viewport' content='width=device-width' />    <meta
+ http-equiv='content-type' content='text/html;charset=utf-8' />    <meta
+ http-equiv='X-UA-Compatible' content='IE=edge' />    <style type='text/css'>       
+ html,body{height:100%}        body { background-color:#f2f2f2;}        *{           
+ text-rendering: optimizeLegibility !important;-webkit-font-smoothing:
+ antialiased !important;}        a,a.appl-link,a.appl-link:link
+ {text-decoration:none;}        a.appl-link:hover {text-decoration:underline;}       
+ .appl_lowbrow a,#appl-footer a,a {color:inherit;}        #mobile-top section,
+ #mobile-bottom section {            mso-hide: all;        }        @media
+ only screen and (max-device-width: 768px) {            * {
+ text-rendering:optimizelegibility;  -webkit-text-size-adjust:none;           
+ }            .appl_lowbrow,#appl-footer,#appl-footer2
+ {-webkit-text-size-adjust:120%;}            .appl_lowbrow a,#appl-footer a, a
+ { color:inherit; }        }        @media only screen and (max-device-width:
+ 768px) and (orientation : portrait) {           
+ .appl_lowbrow,#appl-footer,#appl-footer2 {-webkit-text-size-adjust:120%;}           
+ .appl_lowbrow a,#appl-footer a, a,#appl-footer2 a { color:inherit; }           
+ body{ min-height:930px!important; }        }        @media only screen and
+ (max-device-width: 768px) and (orientation : landscape){            body{
+ min-height:930px!important;}        }    </style>    <style type='text/css'>       
+ /* Mobile Styles */        @media only screen and (max-device-width: 480px) {           
+ body{ min-height:620px!important;}           
+ table[class~=apple_container_full] * {-webkit-text-size-adjust:none; }           
+ table[class~=appl_box] {border:0!important;box-shadow:none!important;}           
+ p, p a{font-family:'Helvetica Neue',Helvetica, Arial, Verdana,sans-serif;}           
+ p[class='appl_headline_txt']{ font-size:13px; line-height:20px;
+ letter-spacing:.1em; margin-top:20px!important;}           
+ /*table[id='appl_body'] p a{font-family:'Lucida Grande','Lucida Sans','Lucida
+ Sans Unicode',Arial,Helvetica,Verdana,sans-serif;}*/           
+ *[class~=appl_desktop]{ display:none!important; }           
+ table[class~=appl_container_full]> tbody > tr > td,           
+ table[class~=appl_container_full] > tr > td{ padding-left:15px!important;
+ padding-right:15px!important; }            table[id='appl_header']{}           
+ table[id='appl_body'] > tr > td,            table[id='appl_body'] > tbody >
+ tr > td{ background-color:#ffffff!important; padding-bottom:35px!important; }           
+ table[id='apple_footer'] { background-color:#f2f2f2!important; }           
+ p[class~=appl_headline_txt]{font-weight:200!important;color:#444!important}           
+ table[class~=appl_100], td[class~=appl_100] { width:100%!important;
+ min-width:0!important;background-color:transparent!important }           
+ td[class~=appl_content]{padding-top:0px!important;}           
+ table[class~=appl_headline] > tbody >tr >td,           
+ table[class~=appl_headline] >tr > td{ padding-bottom:55px!important}           
+ img[class~=appl_hero_img1]{min-width:250px!important; width:95%!important;
+ height:auto!important;}            *[class~=appl_mobile]{
+ height:auto!important; display:block!important;max-height:none!important;
+ line-height:100%!important; overflow:visible!important;
+ width:auto!important;max-width:none!important;}           
+ td[class~=appl_stack]{ display:block!important; width:100%!important;}           
+ td[class~=appl_stack] > table {
+ width:100%!important;//max-width:290px!important}           
+ td[class~=appl_app_icon] img{ width:100px!important; height:auto!important;}           
+ td[class~=appl_app_title]	img{ width:170px!important; height:auto!important;}           
+ td[class~=appl_app_title] {padding-top:10px!Important;}           
+ td[class~=appl_app_txt]{ padding-bottom:18px!important; text-align:left; }           
+ td[class~=appl_app_txt] *
+ {font-size:14px!important;line-height:1.25em!important;}           
+ td[class~=appl_app_txt] a img {width:9px!important;height:auto!important}           
+ td[class~=appl_app_txt] p:first-child{ margin-bottom:4px!important;}           
+ td[class~=appl_center]{text-align:left!important;}           
+ td[class~=appl_footer_text] div,            td[class~=appl_footer_text] div a
+ {                font-family: Helvetica Neue, Helvetica, Arial, Verdana,
+ sans-serif!important;                font-size: 9px!important;               
+ line-height: 1.45em!important;            }           
+ td[class~=appl_footer_text] div{                color: #999999!important;           
+ }            td[class~=appl_footer_text1]
+ {padding-top:0!important;padding-bottom:10px!important}           
+ td[class~=appl_footer_text2] {padding-top:0!important}           
+ td[class~=appl_lowbrow] *, td[class~=appl_lowbrow] {font-size:9px!important;
+ color:#999999}            td[class~=appl_lowbrow] a{color:#999999!important}           
+ td[class~=appl_lowbrow]{padding-bottom:18px!important;}           
+ td[class~=appl_lowbrow2]{padding-top:18px;}           
+ table[class~=appl_headline] > tbody >tr >td[class~=appl_bottom_link],           
+ table[class~=appl_headline] >tr
+ >td[class~=appl_bottom_link]{padding-top:15px!important;
+ padding-bottom:5px!important}            td[class~=appl_logo]{
+ padding-bottom:46px!important;padding-top:10px;}            td[dir=rtl] > div
+ { text-align: right!important; }        }    </style>        </head><body
+ rightmargin='0' leftmargin='0' bgcolor='#f2f2f2' style='margin:0;padding:0;'>   
+ <table width='100%' cellspacing='0' cellpadding='0' border='0' align='center'
+ id='appl_body' class='appl_container_full'>        <tr>            <td
+ bgcolor='#f2f2f2'
+ style='padding-top:20px;padding-left:10px;padding-right:10px;' >               
+ <table width='740' cellspacing='0' cellpadding='0' border='0' align='center'
+ style='margin:0 auto; border:1px solid #eeeeee;box-shadow: 0px 0px 5px 3px
+ #eeeeee;border-collapse:separate;
+ border-radius:15px;background-color:#ffffff;min-width:740px' class='appl_100
+ appl_box'>                    <tr>                        <td width='740'
+ valign='top' align='center' style='' class='appl_100 appl_content '>                                                       
+ <table width='740' cellspacing='0' cellpadding='0' border='0' style='margin:0
+ auto' class='appl_desktop'>                                <tr>                                   
+ <td height='46'>                                    </td>                               
+ </tr>                            </table>                                                                                   
+ <table width='604' cellspacing='0' cellpadding='0' border='0' style='margin:0
+ auto' class='appl_100'>                                <tr>                                   
+ <td valign='top' align='left' class='appl_stack appl_logo'
+ style='padding-bottom:85px'>                                        <img
+ =?utf-8?q?src=3D'http=3A=2F=2Fa1=2Ephobos=2Eapple=2Ecom=2Fau=2Fr30=2FFeatures7=2Fv4=2F9b=2F05=2F4d=2F?=
+ =?utf-8?q?9b054d4d-9761-2994-5598-91920f9e709f=2Fmza=5F5496252094393114268=2E?=
+ =?utf-8?q?png'?= width='27' height='34' style='display:block; margin:0;
+ border:0' alt='Apple' />                                    </td>                               
+ </tr>                            </table>                                                                                   
+ <table width='600' cellspacing='0' cellpadding='0' border='0' style='margin:0
+ auto' class='appl_100'>                                <tr>                                   
+ <td align='left' valign='top' class='appl_stack'>                                                                               
+ <table width='100%' cellspacing='0' cellpadding='0' border='0'>                                           
+ <tr>                                                <td class='appl_app_txt'
+ style='padding-bottom:14px;' >                                                   
+ <div style='font-family:Helvetica Neue, Helvetica,Lucida Grande,Lucida
+ Sans,Lucida Sans
+ Unicode,Arial,sans-serif;color:#444444;font-size:14px;line-height:1.32em;'>                                                       
+ Dear Malliga,                                                        <br><br>                                                       
+ This confirms a refund request for one or more items. A decision will be
+ available in <a href="https://reportaproblem.apple.com"
+ style="color:#517189">Report a Problem</a> within
+ =?utf-8?b?NDjCoGhvdXJzLg==?=                                                       
+ <br><br>                                                        You can visit
+ <a href="https://reportaproblem.apple.com" style="color:#517189">Report a
+ Problem</a> to check the status of the request. After logging in, click on
+ the <b>"Check Status of Claims"</b> link near the top of the page. <br>
+ <br>Please take a few minutes to complete this brief <a
+ =?utf-8?q?href=3D=22https=3A=2F=2Fsurvey=2Eapple=2Ecom=2Fefm=2Fsurvey=3Fs=3D3D3148E46ED6AAFD0?=
+ =?utf-8?q?8DA2B239881186D04=2Flang=2Fen-GB=22?=
+ style="color:#517189">survey</a> and tell us about your experience.                                                       
+ <br><br>                                                        Kind regards,                                                       
+ <br><br>                                                        Apple Support                                                   
+ </div>                                                </td>                                           
+ </tr>                                        </table>                                                                           
+ </td>                                </tr>                           
+ </table>                                                                                   
+ <table width='740' cellspacing='0' cellpadding='0' border='0' style='margin:0
+ auto' class='appl_desktop'>                                <tr>                                   
+ <td height='60'>                                    </td>                               
+ </tr>                            </table>                                                   
+ </td>                    </tr>                </table>            </td>       
+ </tr>    </table>    <table width='100%' cellspacing='0' cellpadding='0'
+ border='0' align='center' id='appl_footer' class='appl_container_full'
+ style=''>        <tr>            <td align='center' bgcolor='#f2f2f2'
+ style='padding-top:20px; padding-left:10px;padding-right:10px;'>                                               
+ <table width='700' cellspacing='0' cellpadding='0' border='0' style='margin:0
+ auto;min-width:740px' class='appl_100'>                    <tr>                       
+ <td align='center' style='padding-bottom:20px;'>                           
+ <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'
+ id='appl-footer2' class='appl_100'>                                <tr>                                   
+ <td align='center' style='padding-top:0;padding-bottom:25px;'
+ class='appl_center appl_footer_text appl_footer_text2' >                                       
+ <div style='font-family:Lucida Grande,Helvetica
+ =?utf-8?q?Neue=2CArial=2CHelvetica=2Csans-serif=2Csans-serif=3Bcolor=3A#999999=3Bfont?=
+ =?utf-8?q?-size=3A9px=3Bline-height=3A1=2E6667em'=3E?=                                           
+ <p align='center'>                                                Copyright
+ =?utf-8?b?wqkgMjAyMiBBcHBsZSBJbmMuwqAx?= Apple Park Way, Cupertino, CA 95014,
+ United States                                                <br/>                                               
+ <a href='http://www.apple.com/legal/privacy/' class='appl-link'
+ style='color:#517189'>Privacy Policy</a>                                               
+ <span
+ =?utf-8?q?class=3D'appl=5Fdesktop'=3E=C2=A0=3C=2Fspan=3E=C2=A0|=C2=A0=3Cspan?=
+ =?utf-8?q?_class=3D'appl=5Fdesktop'=3E=C2=A0=3C=2Fspan=3E?=                                               
+ <a href='https://www.apple.com/legal/internet-services/itunes/'
+ class='appl-link' style='color:#517189'>Terms and Conditions</a>                                               
+ <span
+ =?utf-8?q?class=3D'appl=5Fdesktop'=3E=C2=A0=3C=2Fspan=3E=C2=A0|=C2=A0=3Cspan?=
+ =?utf-8?q?_class=3D'appl=5Fdesktop'=3E=C2=A0=3C=2Fspan=3E?=                                               
+ <a href='https://support.apple.com/' class='appl-link'
+ =?utf-8?q?style=3D'color=3A#517189'=3EApple=C2=A0Support=3C=2Fa=3E?=                                           
+ <span =?utf-8?q?class=3D'appl=5Fdesktop'=3E=C2=A0=3C=2Fspan=3E?=                                           
+ </p>                                        </div>                                   
+ </td>                                </tr>                           
+ </table>                        </td>                    </tr>               
+ </table>            </td>        </tr>    </table><div style=' display:none;
+ white-space:nowrap!important; font:15px courier; color:#000000;
+ =?utf-8?b?bGluZS1oZWlnaHQ6MHB4Oyc+wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqA=?=
+ =?utf-8?b?IMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKg?=
+ </div></body></html>
+Content-Type: multipart/alternative; boundary="=-+H++K2+xK2Ns+mHns74FXg=="
+
+--=-+H++K2+xK2Ns+mHns74FXg==
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width' />
+    <meta http-equiv='content-type' content='text/html;charset=utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <style type='text/css'>
+        html,body{height:100%}
+        body { background-color:#f2f2f2;}
+        *{
+            text-rendering: optimizeLegibility !important;-webkit-font-smoothing: antialiased !important;}
+        a,a.appl-link,a.appl-link:link {text-decoration:none;}
+        a.appl-link:hover {text-decoration:underline;}
+        .appl_lowbrow a,#appl-footer a,a {color:inherit;}
+        #mobile-top section, #mobile-bottom section {
+            mso-hide: all;
+        }
+
+        @media only screen and (max-device-width: 768px) {
+            * { text-rendering:optimizelegibility;  -webkit-text-size-adjust:none;
+            }
+            .appl_lowbrow,#appl-footer,#appl-footer2 {-webkit-text-size-adjust:120%;}
+            .appl_lowbrow a,#appl-footer a, a { color:inherit; }
+
+        }
+        @media only screen and (max-device-width: 768px) and (orientation : portrait) {
+            .appl_lowbrow,#appl-footer,#appl-footer2 {-webkit-text-size-adjust:120%;}
+            .appl_lowbrow a,#appl-footer a, a,#appl-footer2 a { color:inherit; }
+            body{ min-height:930px!important; }
+        }
+
+        @media only screen and (max-device-width: 768px) and (orientation : landscape){
+            body{ min-height:930px!important;}
+        }
+    </style>
+
+    <style type='text/css'>
+        /* Mobile Styles */
+
+        @media only screen and (max-device-width: 480px) {
+            body{ min-height:620px!important;}
+            table[class~=apple_container_full] * {-webkit-text-size-adjust:none; }
+            table[class~=appl_box] {border:0!important;box-shadow:none!important;}
+            p, p a{font-family:'Helvetica Neue',Helvetica, Arial, Verdana,sans-serif;}
+            p[class='appl_headline_txt']{ font-size:13px; line-height:20px; letter-spacing:.1em; margin-top:20px!important;}
+            /*table[id='appl_body'] p a{font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode',Arial,Helvetica,Verdana,sans-serif;}*/
+            *[class~=appl_desktop]{ display:none!important; }
+            table[class~=appl_container_full]> tbody > tr > td,
+            table[class~=appl_container_full] > tr > td{ padding-left:15px!important; padding-right:15px!important; }
+            table[id='appl_header']{}
+            table[id='appl_body'] > tr > td,
+            table[id='appl_body'] > tbody > tr > td{ background-color:#ffffff!important; padding-bottom:35px!important; }
+            table[id='apple_footer'] { background-color:#f2f2f2!important; }
+            p[class~=appl_headline_txt]{font-weight:200!important;color:#444!important}
+            table[class~=appl_100], td[class~=appl_100] { width:100%!important; min-width:0!important;background-color:transparent!important }
+            td[class~=appl_content]{padding-top:0px!important;}
+            table[class~=appl_headline] > tbody >tr >td,
+            table[class~=appl_headline] >tr > td{ padding-bottom:55px!important}
+            img[class~=appl_hero_img1]{min-width:250px!important; width:95%!important; height:auto!important;}
+            *[class~=appl_mobile]{ height:auto!important; display:block!important;max-height:none!important; line-height:100%!important; overflow:visible!important; width:auto!important;max-width:none!important;}
+            td[class~=appl_stack]{ display:block!important; width:100%!important;}
+            td[class~=appl_stack] > table { width:100%!important;//max-width:290px!important}
+            td[class~=appl_app_icon] img{ width:100px!important; height:auto!important;}
+            td[class~=appl_app_title]	img{ width:170px!important; height:auto!important;}
+            td[class~=appl_app_title] {padding-top:10px!Important;}
+            td[class~=appl_app_txt]{ padding-bottom:18px!important; text-align:left; }
+            td[class~=appl_app_txt] * {font-size:14px!important;line-height:1.25em!important;}
+            td[class~=appl_app_txt] a img {width:9px!important;height:auto!important}
+            td[class~=appl_app_txt] p:first-child{ margin-bottom:4px!important;}
+            td[class~=appl_center]{text-align:left!important;}
+            td[class~=appl_footer_text] div,
+            td[class~=appl_footer_text] div a {
+                font-family: Helvetica Neue, Helvetica, Arial, Verdana, sans-serif!important;
+                font-size: 9px!important;
+                line-height: 1.45em!important;
+            }
+            td[class~=appl_footer_text] div{
+                color: #999999!important;
+            }
+            td[class~=appl_footer_text1] {padding-top:0!important;padding-bottom:10px!important}
+            td[class~=appl_footer_text2] {padding-top:0!important}
+            td[class~=appl_lowbrow] *, td[class~=appl_lowbrow] {font-size:9px!important; color:#999999}
+            td[class~=appl_lowbrow] a{color:#999999!important}
+            td[class~=appl_lowbrow]{padding-bottom:18px!important;}
+            td[class~=appl_lowbrow2]{padding-top:18px;}
+            table[class~=appl_headline] > tbody >tr >td[class~=appl_bottom_link],
+            table[class~=appl_headline] >tr >td[class~=appl_bottom_link]{padding-top:15px!important; padding-bottom:5px!important}
+            td[class~=appl_logo]{ padding-bottom:46px!important;padding-top:10px;}
+            td[dir=rtl] > div { text-align: right!important; }
+        }
+
+
+
+    </style>
+    
+    
+</head>
+<body rightmargin='0' leftmargin='0' bgcolor='#f2f2f2' style='margin:0;padding:0;'>
+
+
+    <table width='100%' cellspacing='0' cellpadding='0' border='0' align='center' id='appl_body' class='appl_container_full'>
+        <tr>
+            <td bgcolor='#f2f2f2' style='padding-top:20px;padding-left:10px;padding-right:10px;' >
+                <table width='740' cellspacing='0' cellpadding='0' border='0' align='center' style='margin:0 auto; border:1px solid #eeeeee;box-shadow: 0px 0px 5px 3px #eeeeee;border-collapse:separate; border-radius:15px;background-color:#ffffff;min-width:740px' class='appl_100 appl_box'>
+                    <tr>
+                        <td width='740' valign='top' align='center' style='' class='appl_100 appl_content '>
+
+                            
+                            <table width='740' cellspacing='0' cellpadding='0' border='0' style='margin:0 auto' class='appl_desktop'>
+                                <tr>
+                                    <td height='46'>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+
+                            
+                            <table width='604' cellspacing='0' cellpadding='0' border='0' style='margin:0 auto' class='appl_100'>
+                                <tr>
+                                    <td valign='top' align='left' class='appl_stack appl_logo' style='padding-bottom:85px'>
+                                        <img src='http://a1.phobos.apple.com/au/r30/Features7/v4/9b/05/4d/9b054d4d-9761-2994-5598-91920f9e709f/mza_5496252094393114268.png' width='27' height='34' style='display:block; margin:0; border:0' alt='Apple' />
+                                    </td>
+                                </tr>
+                            </table>
+                            
+
+                            
+                            <table width='600' cellspacing='0' cellpadding='0' border='0' style='margin:0 auto' class='appl_100'>
+                                <tr>
+                                    <td align='left' valign='top' class='appl_stack'>
+                                        
+                                        <table width='100%' cellspacing='0' cellpadding='0' border='0'>
+                                            <tr>
+                                                <td class='appl_app_txt' style='padding-bottom:14px;' >
+                                                    <div style='font-family:Helvetica Neue, Helvetica,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Arial,sans-serif;color:#444444;font-size:14px;line-height:1.32em;'>
+
+                                                        Dear Malliga,
+                                                        <br><br>
+                                                        This confirms a refund request for one or more items. A decision will be available in <a href="https://reportaproblem.apple.com" style="color:#517189">Report a Problem</a> within 48 hours.
+                                                        <br><br>
+                                                        You can visit <a href="https://reportaproblem.apple.com" style="color:#517189">Report a Problem</a> to check the status of the request. After logging in, click on the <b>"Check Status of Claims"</b> link near the top of the page. <br> <br>Please take a few minutes to complete this brief <a href="https://survey.apple.com/efm/survey?s=3D3148E46ED6AAFD08DA2B239881186D04/lang/en-GB" style="color:#517189">survey</a> and tell us about your experience.
+                                                        <br><br>
+                                                        Kind regards,
+                                                        <br><br>
+                                                        Apple Support
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            
+
+                            
+                            <table width='740' cellspacing='0' cellpadding='0' border='0' style='margin:0 auto' class='appl_desktop'>
+                                <tr>
+                                    <td height='60'>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width='100%' cellspacing='0' cellpadding='0' border='0' align='center' id='appl_footer' class='appl_container_full' style=''>
+        <tr>
+            <td align='center' bgcolor='#f2f2f2' style='padding-top:20px; padding-left:10px;padding-right:10px;'>
+                
+                
+                <table width='700' cellspacing='0' cellpadding='0' border='0' style='margin:0 auto;min-width:740px' class='appl_100'>
+                    <tr>
+                        <td align='center' style='padding-bottom:20px;'>
+
+                            <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center' id='appl-footer2' class='appl_100'>
+                                <tr>
+                                    <td align='center' style='padding-top:0;padding-bottom:25px;' class='appl_center appl_footer_text appl_footer_text2' >
+                                        <div style='font-family:Lucida Grande,Helvetica Neue,Arial,Helvetica,sans-serif,sans-serif;color:#999999;font-size:9px;line-height:1.6667em'>
+                                            <p align='center'>
+
+
+                                                Copyright © 2022 Apple Inc. 1 Apple Park Way, Cupertino, CA 95014, United States
+                                                <br/>
+
+                                                <a href='http://www.apple.com/legal/privacy/' class='appl-link' style='color:#517189'>Privacy Policy</a>
+                                                <span class='appl_desktop'> </span> | <span class='appl_desktop'> </span>
+
+                                                <a href='https://www.apple.com/legal/internet-services/itunes/' class='appl-link' style='color:#517189'>Terms and Conditions</a>
+                                                <span class='appl_desktop'> </span> | <span class='appl_desktop'> </span>
+
+                                                <a href='https://support.apple.com/' class='appl-link' style='color:#517189'>Apple Support</a>
+                                            <span class='appl_desktop'> </span>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+
+<div style=' display:none; white-space:nowrap!important; font:15px courier; color:#000000; line-height:0px;'>                                                  </div>
+</body>
+</html>
+--=-+H++K2+xK2Ns+mHns74FXg==
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Id: <110a6bdd-e945-4291-a9db-9a187c908145>
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w=
+3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+    <meta name=3D'viewport' content=3D'width=3Ddevice-width' />
+    <meta http-equiv=3D'content-type' content=3D'text/html;charset=3Dutf-8' =
+/>
+    <meta http-equiv=3D'X-UA-Compatible' content=3D'IE=3Dedge' />
+    <style type=3D'text/css'>
+        html,body{height:100%}
+        body { background-color:#f2f2f2;}
+        *{
+            text-rendering: optimizeLegibility !important;-webkit-font-smoot=
+hing: antialiased !important;}
+        a,a.appl-link,a.appl-link:link {text-decoration:none;}
+        a.appl-link:hover {text-decoration:underline;}
+        .appl_lowbrow a,#appl-footer a,a {color:inherit;}
+        #mobile-top section, #mobile-bottom section {
+            mso-hide: all;
+        }
+
+        @media only screen and (max-device-width: 768px) {
+            * { text-rendering:optimizelegibility;  -webkit-text-size-adjust=
+:none;
+            }
+            .appl_lowbrow,#appl-footer,#appl-footer2 {-webkit-text-size-adju=
+st:120%;}
+            .appl_lowbrow a,#appl-footer a, a { color:inherit; }
+
+        }
+        @media only screen and (max-device-width: 768px) and (orientation : =
+portrait) {
+            .appl_lowbrow,#appl-footer,#appl-footer2 {-webkit-text-size-adju=
+st:120%;}
+            .appl_lowbrow a,#appl-footer a, a,#appl-footer2 a { color:inheri=
+t; }
+            body{ min-height:930px!important; }
+        }
+
+        @media only screen and (max-device-width: 768px) and (orientation : =
+landscape){
+            body{ min-height:930px!important;}
+        }
+    </style>
+
+    <style type=3D'text/css'>
+        /* Mobile Styles */
+
+        @media only screen and (max-device-width: 480px) {
+            body{ min-height:620px!important;}
+            table[class~=3Dapple_container_full] * {-webkit-text-size-adjust=
+:none; }
+            table[class~=3Dappl_box] {border:0!important;box-shadow:none!imp=
+ortant;}
+            p, p a{font-family:'Helvetica Neue',Helvetica, Arial, Verdana,sa=
+ns-serif;}
+            p[class=3D'appl_headline_txt']{ font-size:13px; line-height:20px=
+; letter-spacing:.1em; margin-top:20px!important;}
+            /*table[id=3D'appl_body'] p a{font-family:'Lucida Grande','Lucid=
+a Sans','Lucida Sans Unicode',Arial,Helvetica,Verdana,sans-serif;}*/
+            *[class~=3Dappl_desktop]{ display:none!important; }
+            table[class~=3Dappl_container_full]> tbody > tr > td,
+            table[class~=3Dappl_container_full] > tr > td{ padding-left:15px=
+!important; padding-right:15px!important; }
+            table[id=3D'appl_header']{}
+            table[id=3D'appl_body'] > tr > td,
+            table[id=3D'appl_body'] > tbody > tr > td{ background-color:#fff=
+fff!important; padding-bottom:35px!important; }
+            table[id=3D'apple_footer'] { background-color:#f2f2f2!important;=
+ }
+            p[class~=3Dappl_headline_txt]{font-weight:200!important;color:#4=
+44!important}
+            table[class~=3Dappl_100], td[class~=3Dappl_100] { width:100%!imp=
+ortant; min-width:0!important;background-color:transparent!important }
+            td[class~=3Dappl_content]{padding-top:0px!important;}
+            table[class~=3Dappl_headline] > tbody >tr >td,
+            table[class~=3Dappl_headline] >tr > td{ padding-bottom:55px!impo=
+rtant}
+            img[class~=3Dappl_hero_img1]{min-width:250px!important; width:95=
+%!important; height:auto!important;}
+            *[class~=3Dappl_mobile]{ height:auto!important; display:block!im=
+portant;max-height:none!important; line-height:100%!important; overflow:visi=
+ble!important; width:auto!important;max-width:none!important;}
+            td[class~=3Dappl_stack]{ display:block!important; width:100%!imp=
+ortant;}
+            td[class~=3Dappl_stack] > table { width:100%!important;//max-wid=
+th:290px!important}
+            td[class~=3Dappl_app_icon] img{ width:100px!important; height:au=
+to!important;}
+            td[class~=3Dappl_app_title]	img{ width:170px!important; height:a=
+uto!important;}
+            td[class~=3Dappl_app_title] {padding-top:10px!Important;}
+            td[class~=3Dappl_app_txt]{ padding-bottom:18px!important; text-a=
+lign:left; }
+            td[class~=3Dappl_app_txt] * {font-size:14px!important;line-heigh=
+t:1.25em!important;}
+            td[class~=3Dappl_app_txt] a img {width:9px!important;height:auto=
+!important}
+            td[class~=3Dappl_app_txt] p:first-child{ margin-bottom:4px!impor=
+tant;}
+            td[class~=3Dappl_center]{text-align:left!important;}
+            td[class~=3Dappl_footer_text] div,
+            td[class~=3Dappl_footer_text] div a {
+                font-family: Helvetica Neue, Helvetica, Arial, Verdana, sans=
+-serif!important;
+                font-size: 9px!important;
+                line-height: 1.45em!important;
+            }
+            td[class~=3Dappl_footer_text] div{
+                color: #999999!important;
+            }
+            td[class~=3Dappl_footer_text1] {padding-top:0!important;padding-=
+bottom:10px!important}
+            td[class~=3Dappl_footer_text2] {padding-top:0!important}
+            td[class~=3Dappl_lowbrow] *, td[class~=3Dappl_lowbrow] {font-siz=
+e:9px!important; color:#999999}
+            td[class~=3Dappl_lowbrow] a{color:#999999!important}
+            td[class~=3Dappl_lowbrow]{padding-bottom:18px!important;}
+            td[class~=3Dappl_lowbrow2]{padding-top:18px;}
+            table[class~=3Dappl_headline] > tbody >tr >td[class~=3Dappl_bott=
+om_link],
+            table[class~=3Dappl_headline] >tr >td[class~=3Dappl_bottom_link]=
+{padding-top:15px!important; padding-bottom:5px!important}
+            td[class~=3Dappl_logo]{ padding-bottom:46px!important;padding-to=
+p:10px;}
+            td[dir=3Drtl] > div { text-align: right!important; }
+        }
+
+
+
+    </style>
+   =20
+   =20
+</head>
+<body rightmargin=3D'0' leftmargin=3D'0' bgcolor=3D'#f2f2f2' style=3D'margin=
+:0;padding:0;'>
+
+
+    <table width=3D'100%' cellspacing=3D'0' cellpadding=3D'0' border=3D'0' a=
+lign=3D'center' id=3D'appl_body' class=3D'appl_container_full'>
+        <tr>
+            <td bgcolor=3D'#f2f2f2' style=3D'padding-top:20px;padding-left:1=
+0px;padding-right:10px;' >
+                <table width=3D'740' cellspacing=3D'0' cellpadding=3D'0' bor=
+der=3D'0' align=3D'center' style=3D'margin:0 auto; border:1px solid #eeeeee;=
+box-shadow: 0px 0px 5px 3px #eeeeee;border-collapse:separate; border-radius:=
+15px;background-color:#ffffff;min-width:740px' class=3D'appl_100 appl_box'>
+                    <tr>
+                        <td width=3D'740' valign=3D'top' align=3D'center' st=
+yle=3D'' class=3D'appl_100 appl_content '>
+
+                           =20
+                            <table width=3D'740' cellspacing=3D'0' cellpaddi=
+ng=3D'0' border=3D'0' style=3D'margin:0 auto' class=3D'appl_desktop'>
+                                <tr>
+                                    <td height=3D'46'>
+                                    </td>
+                                </tr>
+                            </table>
+                           =20
+
+                           =20
+                            <table width=3D'604' cellspacing=3D'0' cellpaddi=
+ng=3D'0' border=3D'0' style=3D'margin:0 auto' class=3D'appl_100'>
+                                <tr>
+                                    <td valign=3D'top' align=3D'left' class=3D=
+'appl_stack appl_logo' style=3D'padding-bottom:85px'>
+                                        <img src=3D'http://a1.phobos.apple.c=
+om/au/r30/Features7/v4/9b/05/4d/9b054d4d-9761-2994-5598-91920f9e709f/mza_549=
+6252094393114268.png' width=3D'27' height=3D'34' style=3D'display:block; mar=
+gin:0; border:0' alt=3D'Apple' />
+                                    </td>
+                                </tr>
+                            </table>
+                           =20
+
+                           =20
+                            <table width=3D'600' cellspacing=3D'0' cellpaddi=
+ng=3D'0' border=3D'0' style=3D'margin:0 auto' class=3D'appl_100'>
+                                <tr>
+                                    <td align=3D'left' valign=3D'top' class=3D=
+'appl_stack'>
+                                       =20
+                                        <table width=3D'100%' cellspacing=3D=
+'0' cellpadding=3D'0' border=3D'0'>
+                                            <tr>
+                                                <td class=3D'appl_app_txt' s=
+tyle=3D'padding-bottom:14px;' >
+                                                    <div style=3D'font-famil=
+y:Helvetica Neue, Helvetica,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Ar=
+ial,sans-serif;color:#444444;font-size:14px;line-height:1.32em;'>
+
+                                                        Dear Malliga,
+                                                        <br><br>
+                                                        This confirms a refu=
+nd request for one or more items. A decision will be available in <a href=3D=
+"https://reportaproblem.apple.com" style=3D"color:#517189">Report a Problem<=
+/a> within 48=A0hours.
+                                                        <br><br>
+                                                        You can visit <a hre=
+f=3D"https://reportaproblem.apple.com" style=3D"color:#517189">Report a Prob=
+lem</a> to check the status of the request. After logging in, click on the <=
+b>"Check Status of Claims"</b> link near the top of the page. <br> <br>Pleas=
+e take a few minutes to complete this brief <a href=3D"https://survey.apple.=
+com/efm/survey?s=3D3D3148E46ED6AAFD08DA2B239881186D04/lang/en-GB" style=3D"c=
+olor:#517189">survey</a> and tell us about your experience.
+                                                        <br><br>
+                                                        Kind regards,
+                                                        <br><br>
+                                                        Apple Support
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                       =20
+                                    </td>
+                                </tr>
+                            </table>
+                           =20
+
+                           =20
+                            <table width=3D'740' cellspacing=3D'0' cellpaddi=
+ng=3D'0' border=3D'0' style=3D'margin:0 auto' class=3D'appl_desktop'>
+                                <tr>
+                                    <td height=3D'60'>
+                                    </td>
+                                </tr>
+                            </table>
+                           =20
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width=3D'100%' cellspacing=3D'0' cellpadding=3D'0' border=3D'0' a=
+lign=3D'center' id=3D'appl_footer' class=3D'appl_container_full' style=3D''>
+        <tr>
+            <td align=3D'center' bgcolor=3D'#f2f2f2' style=3D'padding-top:20=
+px; padding-left:10px;padding-right:10px;'>
+               =20
+               =20
+                <table width=3D'700' cellspacing=3D'0' cellpadding=3D'0' bor=
+der=3D'0' style=3D'margin:0 auto;min-width:740px' class=3D'appl_100'>
+                    <tr>
+                        <td align=3D'center' style=3D'padding-bottom:20px;'>
+
+                            <table width=3D'100%' border=3D'0' cellspacing=3D=
+'0' cellpadding=3D'0' align=3D'center' id=3D'appl-footer2' class=3D'appl_100=
+'>
+                                <tr>
+                                    <td align=3D'center' style=3D'padding-to=
+p:0;padding-bottom:25px;' class=3D'appl_center appl_footer_text appl_footer_=
+text2' >
+                                        <div style=3D'font-family:Lucida Gra=
+nde,Helvetica Neue,Arial,Helvetica,sans-serif,sans-serif;color:#999999;font-=
+size:9px;line-height:1.6667em'>
+                                            <p align=3D'center'>
+
+
+                                                Copyright =A9 2022 Apple Inc=
+.=A01 Apple Park Way, Cupertino, CA 95014, United States
+                                                <br/>
+
+                                                <a href=3D'http://www.apple.=
+com/legal/privacy/' class=3D'appl-link' style=3D'color:#517189'>Privacy Poli=
+cy</a>
+                                                <span class=3D'appl_desktop'=
+>=A0</span>=A0|=A0<span class=3D'appl_desktop'>=A0</span>
+
+                                                <a href=3D'https://www.apple=
+.com/legal/internet-services/itunes/' class=3D'appl-link' style=3D'color:#51=
+7189'>Terms and Conditions</a>
+                                                <span class=3D'appl_desktop'=
+>=A0</span>=A0|=A0<span class=3D'appl_desktop'>=A0</span>
+
+                                                <a href=3D'https://support.a=
+pple.com/' class=3D'appl-link' style=3D'color:#517189'>Apple=A0Support</a>
+                                            <span class=3D'appl_desktop'>=A0=
+</span>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+
+<div style=3D' display:none; white-space:nowrap!important; font:15px courier=
+; color:#000000; line-height:0px;'>=A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0=
+ =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 </div>
+</body>
+</html>
+--=-+H++K2+xK2Ns+mHns74FXg==--
