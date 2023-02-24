@@ -169,13 +169,13 @@
               <av:Size x:Key="ShapeSize">200,52.8</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="971.2,6536.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[mails]">
+          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="971.2,7663.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[mails]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="snm:MailMessage">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="936,6411.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="936,7537.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="FolderPath" />
                     <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
@@ -185,9 +185,9 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[mail.Attachments.Count &gt;= 1]" sap:VirtualizedContainerService.HintSize="873.6,6299.2" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[mail.Attachments.Count &gt;= 1]" sap:VirtualizedContainerService.HintSize="873.6,7425.6" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="796,6020.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence sap:VirtualizedContainerService.HintSize="796,7147.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="emailSub" />
                           <Variable x:TypeArguments="x:Boolean" Name="FileExistsupdate" />
@@ -200,9 +200,9 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[mail.Subject.StartsWith(&quot;Invoice&quot;)]" sap:VirtualizedContainerService.HintSize="733.6,5908.8" sap2010:WorkflowViewState.IdRef="If_8">
+                        <If Condition="[mail.Subject.StartsWith(&quot;Invoice&quot;)]" sap:VirtualizedContainerService.HintSize="733.6,7035.2" sap2010:WorkflowViewState.IdRef="If_8">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="656,5630.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <Sequence sap:VirtualizedContainerService.HintSize="656,6756.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="s:String[]" Name="AllFiles" />
                                 <Variable x:TypeArguments="sd2:DataTable" Name="ExcelData" />
@@ -216,6 +216,8 @@
                                 <Variable x:TypeArguments="s:String[]" Name="strArray" />
                                 <Variable x:TypeArguments="x:String" Name="filesRenameList" />
                                 <Variable x:TypeArguments="x:Boolean" Name="renameFileSplit" />
+                                <Variable x:TypeArguments="x:String" Name="FolderPathSubject" />
+                                <Variable x:TypeArguments="x:Boolean" Name="EmailSUbjectExists" />
                               </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -360,6 +362,37 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Not Found&quot; + FolderPath]" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <Assign sap:VirtualizedContainerService.HintSize="593.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[FolderPathSubject]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">["Email_with_attachments_containing_mail_subject_content_" +Now.ToString("ddMMyyyy") + "\" +emailSub+ ".eml"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[EmailSUbjectExists]" sap:VirtualizedContainerService.HintSize="593.6,90.4" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[FolderPathEmailSubject]" PathType="Folder" />
+                              <If Condition="[EmailSUbjectExists]" sap:VirtualizedContainerService.HintSize="593.6,573.6" sap2010:WorkflowViewState.IdRef="If_11">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="400,192.8" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="337.6,80.8" sap2010:WorkflowViewState.IdRef="DeleteFolderX_2" Path="[FolderPathEmailSubject]" Recursive="True" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Not Found&quot; + FolderPathEmailSubject]" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -585,7 +618,7 @@
                                 </ui:MultipleAssign.AssignOperations>
                               </ui:MultipleAssign>
                               <ui:SaveMail DisplayName="Save Mail Message" FilePath="[&quot;Email_with_attachments_containing_mail_subject_content_&quot; +Now.ToString(&quot;ddMMyyyy&quot;) + &quot;\&quot; +emailSub+ &quot;.eml&quot;]" sap:VirtualizedContainerService.HintSize="593.6,88" sap2010:WorkflowViewState.IdRef="SaveMail_7" MailMessage="[mail]" />
-                              <Sequence DisplayName="Extract a pdf data to excel sheet" sap:VirtualizedContainerService.HintSize="593.6,2848.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <Sequence DisplayName="Extract a pdf data to excel sheet" sap:VirtualizedContainerService.HintSize="593.6,3109.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="FilesValue" />
                                   <Variable x:TypeArguments="s:String[]" Name="PathVar" />
@@ -604,13 +637,13 @@
                                     <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("Email_with_attachments_" + Now.ToString("ddMMyyyy") + "\" + emailSub + "\").Where(Function (x) {".PDF", ".PNG"}.Contains(Path.GetExtension(x).toUpper)).toArray]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="531.2,2615.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[PathVar]">
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="531.2,2876" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[PathVar]">
                                   <ui:ForEach.Body>
                                     <ActivityAction x:TypeArguments="x:String">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,2490.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,2751.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="InvoiceDateFormat" />
                                           <Variable x:TypeArguments="x:String" Name="InvoiceNumbers" />
@@ -624,13 +657,13 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-                                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'msedge.exe Invoice1.pdf'" sap:VirtualizedContainerService.HintSize="433.6,1761.6" sap2010:WorkflowViewState.IdRef="WindowScope_6" InformativeScreenshot="36bc67f2566ee8137116d2b9d6d8b4d8" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Invoice*.pdf - Work - Microsoft​ Edge' /&gt;">
+                                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'msedge.exe Invoice1.pdf'" sap:VirtualizedContainerService.HintSize="433.6,2022.4" sap2010:WorkflowViewState.IdRef="WindowScope_6" InformativeScreenshot="36bc67f2566ee8137116d2b9d6d8b4d8" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Invoice*.pdf - Work - Microsoft​ Edge' /&gt;">
                                           <ui:WindowScope.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,1614.4" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,1875.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="InvoiceNumber" />
                                                   <Variable x:TypeArguments="x:String" Name="InvoiceProjects" />
@@ -642,21 +675,10 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="337.6,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_27" Key="/" KeyModifiers="Ctrl" SpecialKey="False">
+                                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="337.6,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_30" Key="num1" KeyModifiers="Ctrl" SpecialKey="True">
                                                   <ui:SendHotkey.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="feb027ce-70c7-4c50-b219-df33e4f56832">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:SendHotkey.Target>
-                                                </ui:SendHotkey>
-                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="337.6,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_28" Key="/" KeyModifiers="Ctrl" SpecialKey="False">
-                                                  <ui:SendHotkey.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="feb027ce-70c7-4c50-b219-df33e4f56832">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8325a70d-a424-451d-bb52-6febc9c6a91b">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
@@ -678,9 +700,22 @@
                                                     </ui:Target>
                                                   </ui:SendHotkey.Target>
                                                 </ui:SendHotkey>
-                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="337.6,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_26" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="337.6,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_31" Key="\" KeyModifiers="Ctrl">
                                                   <ui:SendHotkey.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f9eb5c74-128b-4e42-a39b-ec618320dc2b">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f53af75c-94be-40c3-ab68-04ebdb4865f6">
+                                                      <ui:Target.TimeoutMS>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:Target.TimeoutMS>
+                                                      <ui:Target.WaitForReady>
+                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                      </ui:Target.WaitForReady>
+                                                    </ui:Target>
+                                                  </ui:SendHotkey.Target>
+                                                </ui:SendHotkey>
+                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="337.6,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_32" Key="\" KeyModifiers="Ctrl">
+                                                  <ui:SendHotkey.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="932accf0-8e57-4ebe-a536-52c1b594bd4d">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
@@ -823,7 +858,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=VDL198;Initial Catalog=InvoiceDetails;Integrated Security=True;Encrypt=False" DatabaseConnection="[ConnectionString]" />
-                                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[InvoiceDT]" DisplayName="Run query" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="337.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Insert Into invoice Values(@InvoiceNumbers,@InvoiceDateFormat,@InvoiceProjectName,@BillTotal)">
+                                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[InvoiceDT]" DisplayName="Run query" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="337.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Insert Into invoices Values(@InvoiceNumbers,@InvoiceDateFormat,@InvoiceProjectName,@BillTotal)">
                                             <ui:ExecuteQuery.Parameters>
                                               <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumbers">
                                                 <VisualBasicValue x:TypeArguments="x:String" ExpressionText="InvoiceNumbers" />
